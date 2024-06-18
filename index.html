@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .layout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        width: 743px;
+        background: rgba(35, 100, 219, 1);
+        height: 91px;
+        top: 220px;
+        left: 255px;
+        padding: 10px 32px 10px 32px;
+        gap: 10px;
+        border-radius: 6px;
+        opacity: 0px;
+      }
+
+      .ellipse {
+        position: relative;
+        display: flex;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: conic-gradient(
+          rgba(255, 255, 255, 1) var(--progress),
+          rgba(255, 255, 255, 0.5) 1deg
+        );
+        color: white !important;
+      }
+
+      .ellipse::after {
+        content: attr(data-progress);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        margin: 1px;
+        border-radius: 50%;
+        background: rgba(35, 100, 219, 1);
+        font-size: 1rem;
+        text-align: center;
+      }
+
+      .list {
+        position: absolute;
+        display: flex;
+        margin-left: 80px;
+        flex-direction: column;
+        font-family: "Inter", sans-serif;
+      }
+
+      .chek {
+        padding: 3px 15px;
+        border-radius: 9px;
+        background: rgb(11, 61, 153);
+        width: fit-content;
+        color: white;
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .cheklist {
+        color: white;
+        margin: 6px 0;
+        font-size: 13px;
+      }
+
+      .cheklist:last-child {
+        margin-bottom: 0;
+      }
+
+      .button {
+        color: rgba(71, 119, 237, 1);
+        padding: 10px 32px;
+        border-radius: 6px;
+        background: rgb(255, 255, 255);
+        outline: none;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <span
+        class="ellipse"
+        style="--progress: 28.57deg"
+        data-progress="0/7"
+      ></span>
+      <div class="list">
+        <p class="chek">Чеклист</p>
+        <p class="cheklist">Выполнено: 0 из 7 действий</p>
+        <p class="cheklist">
+          Следующее действие: Созвониться с клиентом до 23.05.24 12:00
+        </p>
+      </div>
+      <div>
+        <button class="button">Открыть чеклист</button>
+      </div>
+    </div>
+  </body>
+</html>
